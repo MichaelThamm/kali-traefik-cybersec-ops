@@ -1,0 +1,25 @@
+# traefik static configuration file (/etc/traefik/traefik.yml)
+# See https://doc.traefik.io/traefik/getting-started/configuration-overview/#the-static-configuration
+# and https://doc.traefik.io/traefik/reference/static-configuration/cli/
+
+api:
+  insecure: true
+  dashboard: true
+  debug: true
+
+entryPoints:
+  web:
+    address: :80 # Create the HTTP entrypoint on port 80
+    http:
+      redirections: # HTTPS redirection (80 to 443)
+        entryPoint:
+          to: websecure
+          scheme: https
+  websecure:
+    address: ":443"
+
+providers:
+  docker:
+    network: "default" # Default network to use for connections to all containers.
+  file:
+    filename: /etc/traefik/config.yml
