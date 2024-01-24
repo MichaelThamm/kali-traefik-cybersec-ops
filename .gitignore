@@ -1,2 +1,4 @@
 /services/traefik/keys/*.pem
+/services/traefik/keys/*.crt
+/services/traefik/keys/*.key
 /services/traefik/keys/*.csr

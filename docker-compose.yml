@@ -16,8 +16,8 @@ services:
     volumes:
       - "./services/traefik/traefik.yml:/etc/traefik/traefik.yml" # Set the static configuration
       - "./services/traefik/config.yml:/etc/traefik/config.yml" # Set the dynamic configuration
-      - "./services/traefik/keys/ca-cert.pem:/etc/traefik/keys/ca-cert.pem" # Set the certificate key
-      - "./services/traefik/keys/ca-cert.pem:/etc/traefik/keys/ca-key.pem" # Set the private key
+      - "./services/traefik/keys/server-cert.crt:/etc/traefik/keys/server-cert.crt" # Set the certificate key
+      - "./services/traefik/keys/server-key.key:/etc/traefik/keys/server-key.key" # Set the private key
       - "/var/run/docker.sock:/var/run/docker.sock" # Give access to the Docker socket
   
   webserver:
@@ -33,11 +33,11 @@ services:
       - "traefik.http.routers.webserver.middlewares=basic-auth"
       - "traefik.http.routers.webserver.tls=true" # Enable TLS for secure traffic
     volumes:
-      # - "./services/traefik/keys/ca-cert.pem:/usr/local/apache2/conf/ssl/ca-cert.pem" # Set the certificate key
-      # - "./services/traefik/keys/ca-cert.pem:/usr/local/apache2/conf/ssl/ca-key.pem" # Set the private key
+      - "./services/traefik/keys/server-cert.crt:/usr/local/apache2/conf/ssl/server-cert.crt" # Set the certificate key
+      - "./services/traefik/keys/server-key.key:/usr/local/apache2/conf/ssl/server-key.key" # Set the private key
       - "./services/webserver/html:/usr/local/apache2/htdocs"
       # - "./services/webserver/httpd-vhosts.conf:/usr/local/apache2/conf/httpd-vhosts.conf"
 
-  kali:
-    image: "kalilinux/kali-rolling:latest"
-    tty: true
+  # kali:
+  #   image: "kalilinux/kali-rolling:latest"
+  #   tty: true
