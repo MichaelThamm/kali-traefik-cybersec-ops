@@ -2,3 +2,4 @@
 /services/traefik/keys/*.crt
 /services/traefik/keys/*.key
 /services/traefik/keys/*.csr
+/crypto-results/oval
