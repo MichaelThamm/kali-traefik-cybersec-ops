@@ -59,7 +59,7 @@ Examples:
       * Encrypt a message
       * Decrypt a message
    2. OpenSSL - Calculate the HMAC of a message before and after encrypt/decrypt for integrity
-   3. OpenSCAP - 
+   3. OpenSCAP - Audit the security of the Kali docker image
       * ![securetty-oval](documentation/oval-securetty-results.png)
    3. GnuTLS - Check Cipher Suites Supported by my personal website: [https://www.michaelthamm.com](https://www.michaelthamm.com)
       * For example:
