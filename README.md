@@ -60,7 +60,7 @@ Examples:
       * Decrypt a message
    2. OpenSSL - Calculate the HMAC of a message before and after encrypt/decrypt for integrity
    3. OpenSCAP - 
-      * ![securetty-oval](documentation/oval-securetty-results.html)
+      * ![securetty-oval](documentation/oval-securetty-results.png)
    3. GnuTLS - Check Cipher Suites Supported by my personal website: [https://www.michaelthamm.com](https://www.michaelthamm.com)
       * For example:
       * TLS_AES_128_GCM_SHA256 0x13, 0x01	TLS1.3
