@@ -52,7 +52,7 @@ Examples:
 ### Procedure:
 1. Execute:
 ```
-   cybersec-check.sh
+   ./bash-scripts/kali.sh
 ```
 2. Results:
    1. GPG - Using AES encryption
@@ -87,8 +87,8 @@ Examples:
 ### Procedure:
 1. Execute:
 ```
-   cybersec-check.sh
+   ./bash-scripts/ubuntu.sh
 ```
 2. Results:
-  3. OpenSCAP - Audit the security of the Kali docker image
-      * ![securetty-oval](documentation/oval-securetty-results.png)
+  3. OpenSCAP - Audit the security configuration of the Ubuntu container
+      * [ubuntu-jammy-oval-results](crypto-results/oval-results.html)
