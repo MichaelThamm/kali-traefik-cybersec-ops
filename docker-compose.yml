@@ -47,3 +47,13 @@ services:
       - "./crypto-results:/usr/local/crypto-results"
     environment:
       - FE_CREDENTIALS=${BASIC_AUTH_PAIR:?Basic auth credential pair is missing}
+
+  ubuntu:
+    build:
+      context: ./services/ubuntu
+    networks:
+      - default
+    tty: true
+    volumes:
+      - "./services/ubuntu:/usr/local/services/ubuntu"
+      - "./crypto-results:/usr/local/crypto-results"
